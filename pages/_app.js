@@ -15,6 +15,11 @@ function MyApp({ Component, pageProps }) {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
+  const handleDeclineCookie = () => {
+    console.log('Cookie consent declined');
+    // Additional logic when cookies are declined (if needed)
+  };
+
   return (
     <>
       <Head>
@@ -50,11 +55,14 @@ function MyApp({ Component, pageProps }) {
       <CookieConsent
         location="bottom"
         buttonText="I understand"
+        declineButtonText="Decline"
+        onDecline={handleDeclineCookie}
         cookieName="blendbrewTeaCookieConsent"
         style={{ background: "#2B373B", fontSize: "16px" }}
         buttonStyle={{ color: "#4e503b", fontSize: "16px" }}
+        declineButtonStyle={{ color: "#fff", backgroundColor: "#b44335" }}
         expires={150}
-        data-testid="cookie-consent-banner" // Added data-testid attribute for testing
+        data-testid="cookie-consent-banner"
       >
         This website uses cookies to improve your experience. By using our website, you agree to our 
         <Link href="/policy" style={{ color: "#F1D00A" }}>Privacy Policy</Link>. 
