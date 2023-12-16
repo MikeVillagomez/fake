@@ -54,8 +54,8 @@ function MyApp({ Component, pageProps }) {
         declineButtonText="Decline"
         declineCookieValue={false}
         style={{ background: "#2EB7EB" }}
-        buttonStyle={{ background:"#f5f5f5", color: "black", fontSize:"13px"}}
-        declineButtonStyle={{background:"#cfcfcf", color: "black", fontSize: "13px"}}
+        buttonStyle={{ background:"#f5f5f5", color: "black", fontSize:"50px"}}
+        declineButtonStyle={{background:"#cfcfcf", color: "black", fontSize: "50px"}}
         expires={150}
       >
         This website uses cookies to improve your experience. By using our website, you agree to our 
