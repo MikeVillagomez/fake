@@ -1,4 +1,3 @@
-// pages/_app.js
 import React, { useEffect } from 'react';
 import '../styles/globals.css';
 import Head from 'next/head';
@@ -14,11 +13,6 @@ function MyApp({ Component, pageProps }) {
     ReactGA.initialize('G-XDWMNHNFNE'); // Replace with your Google Analytics tracking ID
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
-
-  const handleDeclineCookie = () => {
-    console.log('Cookie consent declined');
-    // Additional logic when cookies are declined (if needed)
-  };
 
   return (
     <>
@@ -54,18 +48,18 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
       <CookieConsent
         location="bottom"
-        buttonText="I understand"
+        buttonText="Accept"
+        cookieName="cookieName"
+        enableDeclineButton
         declineButtonText="Decline"
-        onDecline={handleDeclineCookie}
-        cookieName="blendbrewTeaCookieConsent"
-        style={{ background: "#2B373B", fontSize: "16px" }}
-        buttonStyle={{ color: "#4e503b", fontSize: "16px" }}
-        declineButtonStyle={{ color: "#fff", backgroundColor: "#b44335" }}
+        declineCookieValue={false}
+        style={{ background: "#2EB7EB" }}
+        buttonStyle={{ background:"#f5f5f5", color: "black", fontSize:"13px"}}
+        declineButtonStyle={{background:"#cfcfcf", color: "black", fontSize: "13px"}}
         expires={150}
-        data-testid="cookie-consent-banner"
       >
         This website uses cookies to improve your experience. By using our website, you agree to our 
-        <Link href="/policy" style={{ color: "#F1D00A" }}>Privacy Policy</Link>. 
+        <Link href="/policy" style={{ color: "#F1D00A" }}>Privacy Policy</Link>.
       </CookieConsent>
     </>
   );
