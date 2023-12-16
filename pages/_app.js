@@ -5,12 +5,12 @@ import Script from 'next/script';
 import NavigationBar from '../components/NavigationBar';
 import CookieConsent from 'react-cookie-consent';
 import ReactGA from 'react-ga';
-import { Link } from '@nextui-org/react'; // Import Link from @nextui-org/react
+import { Link } from '@nextui-org/react';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     // Initialize Google Analytics
-    ReactGA.initialize('G-XDWMNHNFNE'); // Replace with your Google Analytics tracking ID
+    ReactGA.initialize('G-XDWMNHNFNE');
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
@@ -53,9 +53,9 @@ function MyApp({ Component, pageProps }) {
         enableDeclineButton
         declineButtonText="Decline"
         declineCookieValue={false}
-        style={{ background: "#2EB7EB" }}
-        buttonStyle={{ background:"#f5f5f5", color: "black", fontSize:"50px"}}
-        declineButtonStyle={{background:"#cfcfcf", color: "black", fontSize: "50px"}}
+        style={{ background: "#2B373B" }}  // Changed color as requested
+        buttonStyle={{ background:"#4e503b", color: "white", fontSize:"13px"}} // Adjusted for better visibility and contrast
+        declineButtonStyle={{ background:"#cfcfcf", color: "black", fontSize: "13px"}}
         expires={150}
       >
         This website uses cookies to improve your experience. By using our website, you agree to our 
